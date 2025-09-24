@@ -1,0 +1,46 @@
+Learning Log
+
+Project: 
+Python program that prints a message
+
+Goal: 
+Undertand how docker works and how to use it with a simple program.
+
+Technologies Used: 
+Python
+
+Commands Learned:
+
+ - docker build -t python-test . 
+ - docker run python-test
+ - docker image ls
+
+Concepts Tested:
+
+[x] Build / rebuild images
+
+[ ] Volumes & bind mounts
+
+[ ] Environment variables
+
+[ ] Networking / linking containers
+
+[ ] Multi-stage builds
+
+[ ] Healthchecks
+
+[ ] Logging
+
+
+Key Learnings:
+
+- Learned how to write a minimal Python Dockerfile:
+    - FROM python:latest to install the latest version of python
+    - COPY to copy local files into the container
+    - CMD to set the commands to be executed when running the container
+
+- Understand that Python code can run inside a container independent of the Python that is installed in my machine
+
+- Learned to build and run the container with docker build and docker run
+
+- Gained basic understanding of container layers (base image + copied files)
