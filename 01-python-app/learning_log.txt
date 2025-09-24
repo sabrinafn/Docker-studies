@@ -1,0 +1,41 @@
+Learning Log WIP
+
+Project: 
+How to containerize a full Python application using Docker
+
+Goal: 
+
+- Containerize and run a Python application
+- Set up a local environment to develop a Python application using containers
+- Lint, format, typing and best practices
+- Configure a CI/CD pipeline for a containerized Python application using GitHub Actions
+- Deploy the containerized Python application locally to Kubernetes to test and debug the deployment
+
+Technologies Used: 
+
+
+Commands Learned:
+
+
+Concepts Tested:
+
+[ ] Build / rebuild images
+
+[ ] Volumes & bind mounts
+
+[ ] Environment variables
+
+[ ] Networking / linking containers
+
+[ ] Multi-stage builds
+
+[ ] Healthchecks
+
+[ ] Logging
+
+
+Key Learnings:
+
+
+Source:
+https://docs.docker.com/guides/python/
