@@ -44,3 +44,6 @@ Key Learnings:
 - Learned to build and run the container with docker build and docker run
 
 - Gained basic understanding of container layers (base image + copied files)
+
+Source:
+https://www.freecodecamp.org/portuguese/news/um-guia-para-iniciantes-em-docker-como-criar-sua-primeira-aplicacao-com-o-docker/
