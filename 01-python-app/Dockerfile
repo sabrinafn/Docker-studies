@@ -36,9 +36,11 @@ USER appuser
 
 # Copy the folder with the source code into the container.
 COPY app/ ./app
+COPY .streamlit ./app/.streamlit
+
 
 # Expose the port that the application listens on.
 EXPOSE 8001
 
-# Run the application.
-CMD ["python3", "-m", "uvicorn", "app.app:app", "--host=0.0.0.0", "--port=8001", "--reload"]
+# Run the FastAPI application with Uvicorn.
+CMD ["uvicorn", "app.app:app", "--host", "0.0.0.0", "--port", "8001"]

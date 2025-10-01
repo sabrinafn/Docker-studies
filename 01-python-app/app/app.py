@@ -14,7 +14,7 @@ class Cat(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
     cat_name: str = Field(index=True)
     age: int | None = Field(default=None, index=True)
-    colour: str = Field(default=None, index=True)
+    colour: str | None = Field(default=None, index=True)
     fav_toy: str
 
 

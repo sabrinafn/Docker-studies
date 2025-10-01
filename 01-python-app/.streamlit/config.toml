@@ -1,0 +1,12 @@
+
+[theme] # You have to add this line
+
+primaryColor = '#F7C081'
+
+backgroundColor = '#CEF781'
+
+secondaryBackgroundColor = '#95DE90'
+
+textColor = '#6B6B6B'
+
+font = 'sans serif'
