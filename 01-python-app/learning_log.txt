@@ -12,16 +12,16 @@ Goal:
 - Deploy the containerized Python application locally to Kubernetes to test and debug the deployment
 
 Technologies Used: 
-
+Python
 
 Commands Learned:
 
 
 Concepts Tested:
 
-[ ] Build / rebuild images
+[x] Build / rebuild images
 
-[ ] Volumes & bind mounts
+[x] Volumes & bind mounts
 
 [ ] Environment variables
 
@@ -35,7 +35,8 @@ Concepts Tested:
 
 
 Key Learnings:
-
+- Setting up a Compose file to add a local database and persist data. 
+- How to use Compose Watch to automatically rebuild and run the container when the code is updated.
 
 Source:
 https://docs.docker.com/guides/python/
