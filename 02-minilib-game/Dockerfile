@@ -1,5 +1,3 @@
-# syntax=docker/dockerfile:1
-
 ARG UBUNTU_VERSION=22.04
 FROM ubuntu:${UBUNTU_VERSION}
 
@@ -18,10 +16,12 @@ RUN apt-get update && apt-get install -y \
     libopenal-dev \
     && rm -rf /var/lib/apt/lists/*
 
-COPY app/ ./
-
 RUN git clone https://github.com/codam-coding-college/MLX42.git ./MLX42 \
     && cmake ./MLX42 -B ./MLX42/build \
     && make -C ./MLX42/build -j4
 
-CMD ["/bin/bash"]
+COPY app/ ./
+
+RUN make -C /app
+
+CMD ["/bin/sh"]

@@ -1,16 +1,10 @@
-version: "3.9" # docker compose syntax version
-
 services:
   mlxgame:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     environment:
-      - DISPLAY=${DISPLAY} # host env var DISPLAY
+      - DISPLAY=${DISPLAY}
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix # X server socket
-      - .:/app # code
+      - /tmp/.X11-unix:/tmp/.X11-unix
     working_dir: /app
-    command: make # command to run the app
     tty: true
     stdin_open: true
