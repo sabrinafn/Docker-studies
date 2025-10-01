@@ -34,11 +34,11 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 # Switch to the non-privileged user to run the application.
 USER appuser
 
-# Copy the source code into the container.
-COPY . .
+# Copy the folder with the source code into the container.
+COPY app/ ./app
 
 # Expose the port that the application listens on.
 EXPOSE 8001
 
 # Run the application.
-CMD ["python3", "-m", "uvicorn", "app:app", "--host=0.0.0.0", "--port=8001", "--reload"]
+CMD ["python3", "-m", "uvicorn", "app.app:app", "--host=0.0.0.0", "--port=8001", "--reload"]
