@@ -2,15 +2,13 @@ import os
 import streamlit as st
 import requests
 from PIL import Image
+from streamlit.components.v1 import html as st_html
+from streamlit_extras.stylable_container import stylable_container
 
-img = Image.open("app/orange-chill.png")
-st.set_page_config(page_title="Cats", page_icon=img, layout="centered")
-col1, col2 = st.columns(2)
+img = Image.open("app/header.png")
+st.set_page_config(page_title="Cats", page_icon=img, layout="wide")
 
-with col1:
-    st.title("Cat Collection")
-with col2:
-    st.image(img, width=50)
+st.image(img, width=1434)
 
 
 hide_default_format = """
@@ -24,10 +22,18 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 # Base URL for the FastAPI backend
 API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8001")
 
-header1, header2 = st.columns(2)
+header1, header2 = st.columns([3, 1])
 
 with header1:
-    with st.expander("Add a new cat", expanded=True):
+    with stylable_container(key="adopt_box", css_styles='''
+        {
+            border: 1px solid #6B6B6B;
+            border-radius: 8px;
+            padding: 1em;
+            background-color: #CEF781;
+        }
+    '''):
+        st.subheader("Add a new cat")
         with st.form("adopt_form"):
             col1, col2 = st.columns(2)
             with col1:
@@ -62,21 +68,29 @@ with header1:
                         st.error(f"Error in api request: {e}")
 
 with header2:
-    st.subheader("Cat list")
-    try:
-        response = requests.get(f"{API_BASE_URL}/cats/", timeout=10)
-    except Exception as e:
-        st.error(f"Error with backend: {e}")
-        response = None
+    with stylable_container(key="list_box", css_styles='''
+        {
+            border: 1px solid #6B6B6B;
+            border-radius: 8px;
+            padding: 1em;
+            background-color: #CEF781;
+        }
+    '''):
+        with st.expander("Find your cat here", expanded=False):
+            try:
+                response = requests.get(f"{API_BASE_URL}/cats/", timeout=10)
+            except Exception as e:
+                st.error(f"Error with backend: {e}")
+                response = None
 
-    if response and response.status_code == 200:
-        cats = response.json()
-        if not cats:
-            st.info("No cat was added yet.")
-        else:
-            for cat in cats:
-                age_txt = f"{cat.get('age')} years old" if cat.get("age") is not None else "age not added"
-                colour_txt = cat.get("colour") or "colour not added"
-                st.write(f"• {cat['cat_name']} — {age_txt} — {colour_txt} — toy: {cat['fav_toy']}")
-    elif response is not None:
-        st.error(f"Error in get cats: {response.status_code}")
+            if response and response.status_code == 200:
+                cats = response.json()
+                if not cats:
+                    st.info("No cat was added yet.")
+                else:
+                    for cat in cats:
+                        age_txt = f"{cat.get('age')} years old" if cat.get("age") is not None else "age not added"
+                        colour_txt = cat.get("colour") or "colour not added"
+                        st.write(f"• {cat['cat_name']} — {age_txt} — {colour_txt} — toy: {cat['fav_toy']}")
+            elif response is not None:
+                st.error(f"Error in get cats: {response.status_code}")
