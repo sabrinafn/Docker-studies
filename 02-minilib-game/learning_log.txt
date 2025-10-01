@@ -1,0 +1,38 @@
+Learning Log WIP
+
+Project: 
+Container to run a game using the library MLX42 from: https://github.com/codam-coding-college/MLX42
+
+Goal: 
+
+- Containerize and run a minilibx game application
+
+Technologies Used: 
+
+
+Commands Learned:
+
+
+Concepts Tested:
+
+[ ] Build / rebuild images
+
+[ ] Volumes & bind mounts
+
+[ ] Environment variables
+
+[ ] Networking / linking containers
+
+[ ] Multi-stage builds
+
+[ ] Healthchecks
+
+[ ] Logging
+
+
+Key Learnings:
+
+
+Source:
+
+
