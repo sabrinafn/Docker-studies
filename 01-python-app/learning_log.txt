@@ -1,20 +1,19 @@
 Learning Log WIP
 
 Project: 
-How to containerize a full Python application using Docker
+Cat Collection App – Containerized Python Application with Streamlit and FastAPI
 
 Goal: 
 
 - Containerize and run a Python application
 - Set up a local environment to develop a Python application using containers
-- Lint, format, typing and best practices
-- Configure a CI/CD pipeline for a containerized Python application using GitHub Actions
-- Deploy the containerized Python application locally to Kubernetes to test and debug the deployment
 
 Technologies Used: 
-Python
+Python, Streamlit, FastAPI, PostgreSQL
 
 Commands Learned:
+ docker compose build -> build the image from the instructions given on the Dockerfile for each server requested in the compose.yaml
+ docker compose up -> execute the container and run the app
 
 
 Concepts Tested:
@@ -23,9 +22,9 @@ Concepts Tested:
 
 [x] Volumes & bind mounts
 
-[ ] Environment variables
+[x] Environment variables
 
-[ ] Networking / linking containers
+[x] Networking / linking containers
 
 [ ] Multi-stage builds
 
@@ -35,8 +34,16 @@ Concepts Tested:
 
 
 Key Learnings:
+- Learned how to containerize a full Python stack, including backend, frontend, and database.
 - Setting up a Compose file to add a local database and persist data. 
 - How to use Compose Watch to automatically rebuild and run the container when the code is updated.
+- Discovered how limited is Streamlit
 
 Source:
 https://docs.docker.com/guides/python/
+https://fastapi.tiangolo.com/#create-it
+https://www.w3schools.com/postgresql/
+https://medium.com/@kevinkoech265/a-guide-to-connecting-postgresql-and-pythons-fast-api-from-installation-to-integration-825f875f9f7d
+https://docs.streamlit.io/get-started/fundamentals/main-concepts
+https://arnaudmiribel.github.io/streamlit-extras/
+
